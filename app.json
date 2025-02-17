@@ -1,0 +1,72 @@
+{
+  "expo": {
+    "name": "MegaConecta",
+    "slug": "megaconecta-app",
+    "version": "5.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/ios_icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/megaconecta_logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#8ab934"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.touchesoftware.megaconecta",
+      "infoPlist": {
+        "NSContactsUsageDescription": "Permitir $(PRODUCT_NAME) acceder a tus contactos para acceso rápido a llamadas y recargas."
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android_icon.png",
+        "backgroundColor": "#8ab934"
+      },
+      "versionCode": 500,
+      "package": "com.touchesoftware.megaconecta",
+      "permissions": [
+        "CALL_PHONE",
+        "READ_CONTACTS",
+        "WRITE_CONTACTS",
+        "android.permission.READ_CONTACTS",
+        "android.permission.WRITE_CONTACTS"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "Permitir $(PRODUCT_NAME) acceder a tus contactos para acceso rápido a llamadas y recargas."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "flipper": true
+          }
+        }
+      ],
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "development"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "59444078-dc02-4e80-a21d-9ad431294663"
+      },
+      "oneSignalAppId": "09a99bcf-dbbe-428d-90bc-edb3a64d4821"
+    }
+  }
+}

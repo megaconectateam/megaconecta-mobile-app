@@ -1,0 +1,9 @@
+<svg id="add" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Grupo_16678" data-name="Grupo 16678">
+    <rect id="Rectángulo_2323" data-name="Rectángulo 2323" width="20" height="20" opacity="0"/>
+    <g id="Grupo_16677" data-name="Grupo 16677">
+      <path id="Trazado_34043" data-name="Trazado 34043" d="M10,.41A9.59,9.59,0,1,0,19.59,10,9.6,9.6,0,0,0,10,.41Zm0,17.58A7.99,7.99,0,1,1,17.99,10,7.994,7.994,0,0,1,10,17.99Z" />
+      <path id="Trazado_34044" data-name="Trazado 34044" d="M13.88,9.2H10.8V6.12a.8.8,0,1,0-1.6,0V9.2H6.12a.8.8,0,0,0,0,1.6H9.2v3.08a.8.8,0,1,0,1.6,0V10.8h3.08a.8.8,0,0,0,0-1.6Z" />
+    </g>
+  </g>
+</svg>

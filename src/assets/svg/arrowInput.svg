@@ -1,0 +1,31 @@
+<svg id="Flecha" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" viewBox="0 0 15 15">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_2297" data-name="Rectángulo 2297" width="15" height="15" fill="#263645"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_16627" data-name="Grupo 16627">
+    <g id="Grupo_5252" data-name="Grupo 5252" opacity="0">
+      <g id="Grupo_16626" data-name="Grupo 16626">
+        <rect id="Rectángulo_2294" data-name="Rectángulo 2294" width="15" height="15" fill="#263645"/>
+        <g id="Grupo_16625" data-name="Grupo 16625" clip-path="url(#clip-path)">
+          <g id="Grupo_5251" data-name="Grupo 5251">
+            <g id="Grupo_5250" data-name="Grupo 5250" opacity="0">
+              <g id="Grupo_5249" data-name="Grupo 5249">
+                <g id="Grupo_16624" data-name="Grupo 16624">
+                  <rect id="Rectángulo_2295" data-name="Rectángulo 2295" width="15" height="15" fill="#263645"/>
+                  <g id="Grupo_16623" data-name="Grupo 16623" clip-path="url(#clip-path)">
+                    <g id="Grupo_5248" data-name="Grupo 5248" opacity="0">
+                      <rect id="Rectángulo_1276" data-name="Rectángulo 1276" width="15" height="15" fill="none" opacity="0"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path id="Trazado_10401" data-name="Trazado 10401" d="M3.17,1.66,9.01,7.5,3.17,13.34l1.41,1.41,7.25-7.26L4.58.24,3.17,1.65Z" fill="#c5c5c5"/>
+  </g>
+</svg>

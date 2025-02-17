@@ -1,0 +1,21 @@
+<svg id="Flecha" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" viewBox="0 0 15 15">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_1279" data-name="Rectángulo 1279" width="15" height="15" fill="#6aa500"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_5253" data-name="Grupo 5253" clip-path="url(#clip-path)">
+    <g id="Grupo_5252" data-name="Grupo 5252">
+      <g id="Grupo_5251" data-name="Grupo 5251" clip-path="url(#clip-path)">
+        <g id="Grupo_5250" data-name="Grupo 5250" opacity="0">
+          <g id="Grupo_5249" data-name="Grupo 5249">
+            <g id="Grupo_5248" data-name="Grupo 5248" clip-path="url(#clip-path)">
+              <rect id="Rectángulo_1276" data-name="Rectángulo 1276" width="15" height="15" fill="#6aa500"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path id="Trazado_10401" data-name="Trazado 10401" d="M3.166,1.659,9.006,7.5,3.166,13.34,4.58,14.755,11.834,7.5,4.58.245Z" fill="#6aa500"/>
+  </g>
+</svg>

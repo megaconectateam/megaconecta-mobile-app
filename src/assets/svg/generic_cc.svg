@@ -1,0 +1,8 @@
+<svg id="tarjeta_generica" data-name="tarjeta generica" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Grupo_16737" data-name="Grupo 16737">
+    <rect id="Rectángulo_2352" data-name="Rectángulo 2352" width="24" height="24"  opacity="0"/>
+    <path id="Trazado_34151" data-name="Trazado 34151" d="M12,21.55c-5.81,0-8.73,0-10.17-1.19S.4,16.78.4,12s0-7.18,1.43-8.36S6.19,2.45,12,2.45s8.73,0,10.17,1.19S23.6,7.22,23.6,12s0,7.18-1.43,8.36S17.81,21.55,12,21.55Z"  opacity="0.4"/>
+    <path id="Trazado_34152" data-name="Trazado 34152" d="M.4,11.43H23.61c0-1.72-.01-3.12-.1-4.25H.5C.41,8.31.4,9.7.4,11.43Z" />
+    <rect id="Rectángulo_2353" data-name="Rectángulo 2353" width="6.08" height="3.68" rx="1.42" transform="translate(13.91 14.69)" />
+  </g>
+</svg>

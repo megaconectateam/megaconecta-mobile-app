@@ -1,0 +1,10 @@
+<svg id="mastercard" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="Grupo_16739" data-name="Grupo 16739">
+    <rect id="Rectángulo_2354" data-name="Rectángulo 2354" width="25" height="25" fill="#263645" opacity="0"/>
+    <g id="Grupo_16738" data-name="Grupo 16738">
+      <path id="Trazado_34153" data-name="Trazado 34153" d="M15.88,18.57H9.12V6.43h6.76V18.58Z" fill="#ff5f00"/>
+      <path id="Trazado_34154" data-name="Trazado 34154" d="M9.55,12.5A7.72,7.72,0,0,1,12.5,6.43a7.72,7.72,0,1,0,0,12.14A7.72,7.72,0,0,1,9.55,12.5Z" fill="#eb001b"/>
+      <path id="Trazado_34155" data-name="Trazado 34155" d="M25,12.5a7.727,7.727,0,0,1-12.5,6.08,7.72,7.72,0,0,0,0-12.14A7.725,7.725,0,0,1,25,12.51Z" fill="#f79e1b"/>
+    </g>
+  </g>
+</svg>

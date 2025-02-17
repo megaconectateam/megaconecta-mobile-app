@@ -1,0 +1,9 @@
+<svg id="direcciones" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="Grupo_18943" data-name="Grupo 18943">
+    <rect id="Rectángulo_2486" data-name="Rectángulo 2486" width="25" height="25" fill="#263645" opacity="0"/>
+    <g id="Grupo_18942" data-name="Grupo 18942">
+      <path id="Trazado_35600" data-name="Trazado 35600" d="M12.5.72A10.051,10.051,0,0,0,2.45,10.77a13.43,13.43,0,0,0,3.88,8.86,25.892,25.892,0,0,0,5.27,4.38,1.7,1.7,0,0,0,1.79,0,25.622,25.622,0,0,0,5.27-4.38,13.43,13.43,0,0,0,3.88-8.86A10.036,10.036,0,0,0,12.5.72Z" fill="#263645" fill-rule="evenodd" opacity="0.4"/>
+      <path id="Trazado_35601" data-name="Trazado 35601" d="M12.5,13.83a4.02,4.02,0,1,1,4.01-4.02A4.02,4.02,0,0,1,12.5,13.83Z" fill="#263645" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg id="other" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="horizontal-menu-circle--navigation-dots-three-circle-button-horizontal-menu">
+    <path id="Union" d="M12,0A12,12,0,1,0,24,12,12,12,0,0,0,12,0Z" fill="#263645" opacity="0.4"/>
+    <path id="Subtract" d="M12,13.87A1.87,1.87,0,1,0,10.13,12,1.874,1.874,0,0,0,12,13.87ZM7.73,12a1.87,1.87,0,1,1-1.87-1.87A1.874,1.874,0,0,1,7.73,12Zm10.4,1.87A1.87,1.87,0,1,0,16.26,12,1.874,1.874,0,0,0,18.13,13.87Z" fill="#263645" fill-rule="evenodd"/>
+  </g>
+</svg>
