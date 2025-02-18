@@ -1,0 +1,2890 @@
+{
+	"info": {
+		"_postman_id": "0a52da4e-6bd7-4789-a466-aaa1bee2e39a",
+		"name": "Megaconecta API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3681850"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Extract and save token\", function () {\r",
+							"    var jsonData = pm.response.json();    \r",
+							"    pm.environment.set(\"token\", jsonData.data.token);    \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/m/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"m",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProfile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/account/getprofile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"getprofile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SetCall",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/calls/setcall?phone=5352917501",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"calls",
+						"setcall"
+					],
+					"query": [
+						{
+							"key": "phone",
+							"value": "5352917501"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPaymentMethods",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/payment/paymentmethods",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"paymentmethods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCallReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/calls/getcallreport?start_date=01/01/2021&end_date=01/13/2022&sort_field=CALL_CONNECT_TIME&sort_dir=DESC",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"calls",
+						"getcallreport"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "01/01/2021"
+						},
+						{
+							"key": "end_date",
+							"value": "01/13/2022"
+						},
+						{
+							"key": "sort_field",
+							"value": "CALL_CONNECT_TIME"
+						},
+						{
+							"key": "sort_dir",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCallReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/calls/getcallreport?start_date=01/01/2021&end_date=7/27/2022&sort_field=CALL_DISCONNECT_TIME&sort_dir=DESC",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"calls",
+						"getcallreport"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "01/01/2021"
+						},
+						{
+							"key": "end_date",
+							"value": "7/27/2022"
+						},
+						{
+							"key": "sort_field",
+							"value": "CALL_DISCONNECT_TIME"
+						},
+						{
+							"key": "sort_dir",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetStoreReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/store/getstorereport?start_date=7/01/2021&end_date=7/27/2022&sort_field=createdDate&sort_dir=DESC",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"getstorereport"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "7/01/2021"
+						},
+						{
+							"key": "end_date",
+							"value": "7/27/2022"
+						},
+						{
+							"key": "sort_field",
+							"value": "createdDate"
+						},
+						{
+							"key": "sort_dir",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFundReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/funds/getfundreport?start_date=7/01/2021&end_date=7/27/2022&sort_field=DATELOG&sort_dir=DESC",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"funds",
+						"getfundreport"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "7/01/2021"
+						},
+						{
+							"key": "end_date",
+							"value": "7/27/2022"
+						},
+						{
+							"key": "sort_field",
+							"value": "DATELOG"
+						},
+						{
+							"key": "sort_dir",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTopupReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/topups/gettopupreport?start_date=01/01/2021&end_date=7/27/2022&sort_field=TRANSACTION_TIMESTAMP&sort_dir=DESC",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"topups",
+						"gettopupreport"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "01/01/2021"
+						},
+						{
+							"key": "end_date",
+							"value": "7/27/2022"
+						},
+						{
+							"key": "sort_field",
+							"value": "TRANSACTION_TIMESTAMP"
+						},
+						{
+							"key": "sort_dir",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSmsReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/sms/getsmsreport?start_date=01/01/2024&end_date=01/20/2024&sort_field=INITIATION_TIME&sort_dir=DESC",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sms",
+						"getsmsreport"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "01/01/2024"
+						},
+						{
+							"key": "end_date",
+							"value": "01/20/2024"
+						},
+						{
+							"key": "sort_field",
+							"value": "INITIATION_TIME"
+						},
+						{
+							"key": "sort_dir",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemittanceReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/remittance/getremittancereport?start_date=01/01/2021&end_date=7/27/2022&sort_field=CREATED&sort_dir=DESC",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"remittance",
+						"getremittancereport"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "01/01/2021"
+						},
+						{
+							"key": "end_date",
+							"value": "7/27/2022"
+						},
+						{
+							"key": "sort_field",
+							"value": "CREATED"
+						},
+						{
+							"key": "sort_dir",
+							"value": "DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetComboProducts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/store/getproducts?category=2&location=0&sort_field=price&sort_dir=asc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"getproducts"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "2"
+						},
+						{
+							"key": "location",
+							"value": "0"
+						},
+						{
+							"key": "sort_field",
+							"value": "price"
+						},
+						{
+							"key": "sort_dir",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetComboCategories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/store/getproductcategories",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"getproductcategories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetComboTypes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/store/getproducttypes?category=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"getproducttypes"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetComboDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/store/products/41",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"products",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetComboLocations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/store/getproductlocations?category=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"getproductlocations"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetComboReportDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/store/getstorereportdetails?order_id=134",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"getstorereportdetails"
+					],
+					"query": [
+						{
+							"key": "order_id",
+							"value": "134"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetComboMunicipalities",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/store/getmunicipalities?province=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"getmunicipalities"
+					],
+					"query": [
+						{
+							"key": "province",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetComboProvinces",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/store/getprovinces",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"getprovinces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompletePaypalTopup",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "device_data",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nonce",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "topup_list",
+							"value": "[{\"country\":{\"count_cod\":\"CU\",\"short_name\":\"Cuba\",\"calling_code\":\"53\",\"mobile_mask\":\"+53NNNNNNNN\"},\"carrier\":{\"uid\":3645,\"name\":\"CubaCel Cuba\",\"currency_code\":\"CUP\"},\"product\":{\"localamount\":\"12.00\",\"realamount\":\"11.99\",\"remoteamount\":\"250.00\",\"remoteformatedamount\":\"250.00 CUP\"},\"phoneToRecharge\":\"+5354123675\",\"discount\":\"4.00\",\"price\":7.99}]",
+							"type": "text"
+						},
+						{
+							"key": "total_to_pay",
+							"value": "7.99",
+							"type": "text"
+						},
+						{
+							"key": "payment_method_data",
+							"value": "{\"isNewCreditCard\":false,\"saveCreditCard\":false,\"paymentName\":\"PAYPAL\",\"existingPaymentMethod\":null,\"newPaymentMethod\":null}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/payment/completepaypaltopup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"completepaypaltopup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddPaymentMethod",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nonce",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_data",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "cc_number",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "cvc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "exp_date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "city",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "zip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "save_method",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/payment/paymentmethods",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"paymentmethods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePaymentMethod",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nonce",
+							"value": "tokencc_bc_bnbrcf_x7syhw_fj2ygp_t6d6fw_t76",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "Ruben",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "15616 SW 62nd ST",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "q1",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Miami",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "FL",
+							"type": "text"
+						},
+						{
+							"key": "zip",
+							"value": "33193",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Dorrego",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "US",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/payment/paymentmethods/SAMPLE_ID",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"paymentmethods",
+						"SAMPLE_ID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePaymentMethod",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/payment/paymentmethods/SAMPLE_ID",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"paymentmethods",
+						"SAMPLE_ID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PayComboCreditCard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nonce",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_data",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "accept_referral",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "is_new_method",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "save_method",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "payment_method_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "cc_number",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "cvc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "exp_date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "city",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "zip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "products",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_first_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_last_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_address",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_city",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_state",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_province",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_municipe",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_country",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "total_products",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "total_shipping",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "total_to_pay",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/payment/store/creditcard",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"store",
+						"creditcard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetStoreTextByCode",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/store/getstoretextbycode?code=CHECKOUT",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"store",
+						"getstoretextbycode"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "CHECKOUT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListByCountry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/carrier/listbycountry?country=CU&category=TOPUP",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"carrier",
+						"listbycountry"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "CU"
+						},
+						{
+							"key": "category",
+							"value": "TOPUP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRatesSms",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/rates/sms",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rates",
+						"sms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CarrierListByPhoneCategory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/carrier/listbyphonecategory?phone=51951059920&category=TOPUP",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"carrier",
+						"listbyphonecategory"
+					],
+					"query": [
+						{
+							"key": "phone",
+							"value": "51951059920"
+						},
+						{
+							"key": "category",
+							"value": "TOPUP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListActiveCarrierCountries",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/countries/listbundlecountries",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"countries",
+						"listbundlecountries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckPhoneBlacklist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/payment/checkphoneblacklist?phone=5312345678",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"checkphoneblacklist"
+					],
+					"query": [
+						{
+							"key": "phone",
+							"value": "5312345678"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTopupRates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/rates/listtopuprates?operator=3645",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rates",
+						"listtopuprates"
+					],
+					"query": [
+						{
+							"key": "operator",
+							"value": "3645"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReferralReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/account/getreferralreport?start_date=07/11/2022&end_date=07/11/2022&sort_field=CREATED&sort_dir=DESC&category=",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"getreferralreport"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "07/11/2022"
+						},
+						{
+							"key": "end_date",
+							"value": "07/11/2022"
+						},
+						{
+							"key": "sort_field",
+							"value": "CREATED"
+						},
+						{
+							"key": "sort_dir",
+							"value": "DESC"
+						},
+						{
+							"key": "category",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSmsRates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/rates/getsmsrate?phone=+5354123675",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rates",
+						"getsmsrate"
+					],
+					"query": [
+						{
+							"key": "phone",
+							"value": "+5354123675"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReferralBalance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/account/getreferralbalance",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"getreferralbalance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCallCountryRate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/rates/getcallcountryrate?country=CU&phone=7862419907",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rates",
+						"getcallcountryrate"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "CU"
+						},
+						{
+							"key": "phone",
+							"value": "7862419907"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SendSMS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "phone",
+							"value": "17862419907",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "US",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/sms",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPromotions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/promotions/getallcontents?category=MAINSLIDER",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"promotions",
+						"getallcontents"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "MAINSLIDER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetContacts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/contacts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLocationProducts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/remittance/getlocationproducts?currency=CUP&municipality=171&province=10&remit_type=cash",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"remittance",
+						"getlocationproducts"
+					],
+					"query": [
+						{
+							"key": "currency",
+							"value": "CUP"
+						},
+						{
+							"key": "municipality",
+							"value": "171"
+						},
+						{
+							"key": "province",
+							"value": "10"
+						},
+						{
+							"key": "remit_type",
+							"value": "cash"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeUserPassword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "current_password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "new_password",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/account/changeuserpassword",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"changeuserpassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SetCommunicationOptions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1227|Rzg9bNpfJGWyoQ8NkdvKM9dKZttApdqwPJ6kTs9I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "97950ac6-857d-40b4-9e97-ce6fcd61d5f7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "receive_email",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "receive_sms",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://apiweb2.megaconecta.com/api/v1/account/communication",
+					"protocol": "https",
+					"host": [
+						"apiweb2",
+						"megaconecta",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"communication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetActiveSlides",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/carousel/activeslides?target=MOBILE&language=es",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"carousel",
+						"activeslides"
+					],
+					"query": [
+						{
+							"key": "target",
+							"value": "MOBILE"
+						},
+						{
+							"key": "language",
+							"value": "es"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetConversations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/sms/conversations",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"sms",
+						"conversations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PayRemittanceCreditCard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"device_data\": \"\",\r\n    \"accept_referral\": 0,\r\n    \"is_new_method\": 0,\r\n    \"save_method\": 0,\r\n    \"payment_method_id\": 0,\r\n    \"type\": \"\",\r\n    \"full_name\": \"\",\r\n    \"address\": \"\",\r\n    \"neighborhood\": \"\",\r\n    \"province_id\": 0,\r\n    \"municipality_id\": 0,\r\n    \"instructions\": \"\",\r\n    \"product_id\": 0,\r\n    \"currency_to_add\": \"\",\r\n    \"carne_id\": \"\",\r\n    \"phone\": \"\",\r\n    \"update_contact_info\": true\r\n\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/payment/remittance/creditcard",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"remittance",
+						"creditcard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PayComboPayPal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nonce",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_data",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "accept_referral",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "is_new_method",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "save_method",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "payment_method_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "products",
+							"value": "[]",
+							"type": "text"
+						},
+						{
+							"key": "delivery_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_first_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_last_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_address",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_city",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_state",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_province",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_municipe",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delivery_country",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "total_products",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "total_shipping",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "total_to_pay",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/payment/store/paypal",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"store",
+						"paypal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PayFundsCreditCard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "654|iRd9RBidYWAgfDN9ve35RSXS2s2DdrKdaYktLhXC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "97950ac6-857d-40b4-9e97-ce6fcd61d5f7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "device_data",
+							"value": "{\\\"device_session_id\\\":\\\"a5be7e8e338bec93a1efaa44c9de949e\\\",\\\"fraud_merchant_id\\\":null,\\\"correlation_id\\\":\\\"aee1184342e3733134d60f7a7443b410\\\"}",
+							"type": "text"
+						},
+						{
+							"key": "accept_referral",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "is_new_method",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "save_method",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "payment_method_id",
+							"value": "61386",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "0.5",
+							"type": "text"
+						},
+						{
+							"key": "fee",
+							"value": "0.35",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://10.0.0.115:8000/api/v1/payment/funds/creditcard",
+					"protocol": "http",
+					"host": [
+						"10",
+						"0",
+						"0",
+						"115"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"funds",
+						"creditcard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PayFundsPayPal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "device_data",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "accept_referral",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "is_new_method",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "save_method",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "payment_method_id",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "amount",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fee",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nonce",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/payment/funds/paypal",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"funds",
+						"paypal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WithdrawByZelle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "full_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/account/withdrawbyzelle",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"withdrawbyzelle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SendReferral",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "language",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/account/sendreferral",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"sendreferral"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PayTopupCreditCard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-App-Id",
+						"value": "{{xappid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nonce",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_data",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "accept_referral",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "is_new_method",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "save_method",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "cc_number",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "cvc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "exp_date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "zip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "total_to_pay",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "topup_list",
+							"value": "[]",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/payment/topup/creditcard",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"topup",
+						"creditcard"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
